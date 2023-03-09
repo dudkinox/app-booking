@@ -48,7 +48,7 @@ class PopularFoodTiles extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, ScaleRoute(page: FoodDetailsPage()));
+        Navigator.push(context, ScaleRoute(page: FoodDetailsPages()));
       },
       child: Column(
         children: <Widget>[
@@ -331,5 +331,3 @@ class PopularFoodItems extends StatelessWidget {
     );
   }
 }
-
-

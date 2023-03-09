@@ -3,12 +3,12 @@ import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/FoodOrderPage.dart';
 import 'package:flutter_app/widgets/FoodDetailsSlider.dart';
 
-class FoodDetailsPage extends StatefulWidget {
+class FoodDetailsPages extends StatefulWidget {
   @override
-  _FoodDetailsPageState createState() => _FoodDetailsPageState();
+  _FoodDetailsPagesState createState() => _FoodDetailsPagesState();
 }
 
-class _FoodDetailsPageState extends State<FoodDetailsPage> {
+class _FoodDetailsPagesState extends State<FoodDetailsPages> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
