@@ -1,0 +1,66 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.flutter_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->D:\Korn-Yapa\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->D:\Korn-Yapa\android\app\src\debug\AndroidManifest.xml:6:22-64
+15    <!--
+16     io.flutter.app.FlutterApplication is an android.app.Application that
+17         calls FlutterMain.startInitialization(this); in its onCreate method.
+18         In most cases you can leave this as-is, but you if you want to provide
+19         additional functionality it is fine to subclass or reimplement
+20         FlutterApplication and put your custom class here.
+21    -->
+22    <application
+23        android:name="android.app.Application"
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.6.0] C:\Users\ASUS\.gradle\caches\transforms-3\941ea981a7ab334fbfc9e648f12266a4\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/ic_launcher"
+27        android:label="flutter_app" >
+28        <activity
+29            android:name="com.example.flutter_app.MainActivity"
+30            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+31            android:hardwareAccelerated="true"
+32            android:launchMode="singleTop"
+33            android:theme="@style/LaunchTheme"
+34            android:windowSoftInputMode="adjustResize" >
+35            <intent-filter>
+36                <action android:name="android.intent.action.MAIN" />
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+39            </intent-filter>
+40        </activity>
+41        <!--
+42             Don't delete the meta-data below.
+43             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+44        -->
+45        <meta-data
+46            android:name="flutterEmbedding"
+47            android:value="2" />
+48
+49        <uses-library
+49-->[androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+50            android:name="androidx.window.extensions"
+50-->[androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+51            android:required="false" />
+51-->[androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+52        <uses-library
+52-->[androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+53            android:name="androidx.window.sidecar"
+53-->[androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+54            android:required="false" />
+54-->[androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+55    </application>
+56
+57</manifest>
