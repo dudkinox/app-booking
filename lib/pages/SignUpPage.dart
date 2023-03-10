@@ -40,6 +40,9 @@ class _SignUpPageState extends State<SignUpPage> {
         // height: double.infinity,
         color: Colors.white70,
         child: LayoutBuilder(builder: (context, constraint) {
+          var image = Image.asset(
+            "assets/images/menus/kyp.jpg",
+          );
           return SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: ConstrainedBox(
@@ -70,9 +73,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: 230,
                             height: 100,
                             alignment: Alignment.center,
-                            child: Image.asset(
-                              "assets/images/menus/ic_food_express.png",
-                            ),
+                            child: image,
                           ),
                           TextField(
                             showCursor: true,
