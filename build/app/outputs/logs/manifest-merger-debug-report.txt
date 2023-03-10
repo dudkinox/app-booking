@@ -17,8 +17,10 @@ INJECTED from D:\Korn-Yapa\android\app\src\main\AndroidManifest.xml:1:1-30:12
 INJECTED from D:\Korn-Yapa\android\app\src\main\AndroidManifest.xml:1:1-30:12
 INJECTED from D:\Korn-Yapa\android\app\src\main\AndroidManifest.xml:1:1-30:12
 MERGED from D:\Korn-Yapa\android\app\src\main\AndroidManifest.xml:1:1-30:12
+MERGED from [:webview_flutter_android] D:\Korn-Yapa\build\webview_flutter_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\aed06efd7ac81beebf11d48604ab1eff\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.webkit:webkit:1.5.0] C:\Users\ASUS\.gradle\caches\transforms-3\d8264cf029d95c21d79ee572c53906c0\transformed\webkit-1.5.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\dcecd669f7ef2fce417cdd22827a05be\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\e78c7c9871fdcdd3f76104eb25b44c68\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\e47c8521b1c5a601acd7a6f8a4745d8e\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -55,10 +57,14 @@ uses-sdk
 INJECTED from D:\Korn-Yapa\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Korn-Yapa\android\app\src\main\AndroidManifest.xml
 INJECTED from D:\Korn-Yapa\android\app\src\main\AndroidManifest.xml
+MERGED from [:webview_flutter_android] D:\Korn-Yapa\build\webview_flutter_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:webview_flutter_android] D:\Korn-Yapa\build\webview_flutter_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\aed06efd7ac81beebf11d48604ab1eff\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\aed06efd7ac81beebf11d48604ab1eff\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\ASUS\.gradle\caches\transforms-3\2d23328e5fbd1e69f10064dad0947605\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.5.0] C:\Users\ASUS\.gradle\caches\transforms-3\d8264cf029d95c21d79ee572c53906c0\transformed\webkit-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.5.0] C:\Users\ASUS\.gradle\caches\transforms-3\d8264cf029d95c21d79ee572c53906c0\transformed\webkit-1.5.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\dcecd669f7ef2fce417cdd22827a05be\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\dcecd669f7ef2fce417cdd22827a05be\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\e78c7c9871fdcdd3f76104eb25b44c68\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44

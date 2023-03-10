@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
+import 'package:flutter_app/pages/CaloryCount.dart';
 import 'package:flutter_app/pages/FoodDetailsPage.dart';
 import 'package:flutter_app/pages/SignUpPage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../common/button.dart';
+import '../services/account_services.dart';
 import '../themes/constant.dart';
+import 'BookTable.dart';
 import 'ForgotPassword.dart';
 
 class SignInPage extends StatefulWidget {
@@ -15,6 +18,8 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  TextEditingController username = new TextEditingController();
+  TextEditingController password = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +54,7 @@ class _SignInPageState extends State<SignInPage> {
                     height: 100,
                     alignment: Alignment.center,
                     child: Image.asset(
-                      "assets/images/menus/kyp.jpg",
+                      "assets/images/menus/kyp.png",
                     ),
                   ),
                   SizedBox(
@@ -67,7 +72,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       filled: true,
                       prefixIcon: Icon(
-                        Icons.email,
+                        Icons.person,
                         color: Color(0xFF666666),
                         size: defaultIconSize,
                       ),
@@ -76,8 +81,9 @@ class _SignInPageState extends State<SignInPage> {
                           color: Color(0xFF666666),
                           fontFamily: defaultFontFamily,
                           fontSize: defaultFontSize),
-                      hintText: "Email",
+                      hintText: "Username",
                     ),
+                    controller: username,
                   ),
                   SizedBox(
                     height: 15,
@@ -111,6 +117,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       hintText: "Password",
                     ),
+                    controller: password,
                   ),
                   SizedBox(
                     height: 15,
@@ -137,7 +144,108 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   ButtonKYP(
                     text: "SIGN IN",
-                    process: () {},
+                    process: () {
+                      Accountservices.signIn(username.text, password.text)
+                          .then((check) => {
+                                if (check)
+                                  {
+                                    // showDialog(
+                                    //   context: context,
+                                    //   builder: (BuildContext context) {
+                                    //     return AlertDialog(
+                                    //       title: Text('Sign Ined'),
+                                    //       content:
+                                    //           Text('Dialog content goes here.'),
+                                    //       actions: [
+                                    //         TextButton(
+                                    //           child: Text('Cancel'),
+                                    //           onPressed: () {
+                                    //             Navigator.of(context).pop();
+                                    //           },
+                                    //         ),
+                                    //         TextButton(
+                                    //           child: Text('OK'),
+                                    //           onPressed: () {
+                                    //             // do something
+                                    //           },
+                                    //         ),
+                                    //       ],
+                                    //     );
+                                    //   },
+                                    // )
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return StatefulBuilder(
+                                          builder: (BuildContext context,
+                                              StateSetter setState) {
+                                            return AlertDialog(
+                                              title: Text(
+                                                'Welcome to Korn-Yapa!',
+                                                style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              content: Text(
+                                                'What would you like to?',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                ),
+                                              ),
+                                              actions: [
+                                                ButtonKYP(
+                                                  text: 'Book Table',
+                                                  process: () async {
+                                                    Navigator.push(
+                                                        context,
+                                                        ScaleRoute(
+                                                            page: BookTable()));
+                                                  },
+                                                ),
+                                                SizedBox(
+                                                  height: 7,
+                                                ),
+                                                ButtonKYP(
+                                                  text: 'Count Calory',
+                                                  process: () async {
+                                                    Navigator.push(
+                                                        context,
+                                                        ScaleRoute(
+                                                            page:
+                                                                CaloryCount()));
+                                                  },
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                    )
+                                  }
+                                else
+                                  {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: Text('Can not Sign In!'),
+                                          content: Text(
+                                              'Username or Password invalid.'),
+                                          actions: [
+                                            TextButton(
+                                              child: Text('Close'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    )
+                                  }
+                              });
+                    },
                   ),
                   SizedBox(
                     height: 2,

@@ -6,7 +6,8 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../common/button.dart';
-import '../services/mainservices.dart';
+import '../themes/constant.dart';
+import '../services/account_services.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -14,9 +15,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  String defaultFontFamily = 'Roboto-Light.ttf';
-  double defaultFontSize = 14;
-  double defaultIconSize = 17;
   TextEditingController username = new TextEditingController();
   TextEditingController password = new TextEditingController();
   TextEditingController email = new TextEditingController();
@@ -41,7 +39,7 @@ class _SignUpPageState extends State<SignUpPage> {
         color: Colors.white70,
         child: LayoutBuilder(builder: (context, constraint) {
           var image = Image.asset(
-            "assets/images/menus/kyp.jpg",
+            "assets/images/menus/kyp.png",
           );
           return SingleChildScrollView(
             physics: BouncingScrollPhysics(),
@@ -478,7 +476,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ButtonKYP(
                             text: "SIGN UP",
                             process: () async {
-                              await APIservices.SignUp(
+                              await Accountservices.signUp(
                                   username.text,
                                   email.text,
                                   password.text,

@@ -32,7 +32,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     height: 100,
                     alignment: Alignment.center,
                     child: Image.asset(
-                      "assets/images/menus/kyp.jpg",
+                      "assets/images/menus/kyp.png",
                     ),
                   ),
                   SizedBox(
