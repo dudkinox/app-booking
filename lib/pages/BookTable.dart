@@ -13,6 +13,7 @@ class _BookTableState extends State<BookTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFfae3e2),
       appBar: AppBar(
         backgroundColor: Color(0xFFFAFAFA),
         elevation: 0,
@@ -35,11 +36,7 @@ class _BookTableState extends State<BookTable> {
               })
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[BookTableWidget()],
-        ),
-      ),
+      body: BookTableWidget(),
       bottomNavigationBar: BottomNavBarWidget(),
     );
   }

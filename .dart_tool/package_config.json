@@ -86,6 +86,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/ASUS/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///C:/Users/ASUS/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.5",
       "packageUri": "lib/",
@@ -206,7 +212,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2023-03-10T12:13:34.134159Z",
+  "generated": "2023-03-11T11:13:04.969639Z",
   "generator": "pub",
   "generatorVersion": "2.19.3"
 }

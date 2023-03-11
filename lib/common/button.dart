@@ -2,13 +2,22 @@ import 'package:flutter/material.dart';
 
 class ButtonKYP extends StatelessWidget {
   String text;
+  double height;
+  double width;
   void Function() process;
-  ButtonKYP({Key key, this.text, this.process}) : super(key: key);
+  ButtonKYP({
+    Key key,
+    this.text,
+    this.process,
+    this.height,
+    this.width,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: width != null ? width : double.infinity,
+      height: height != null ? height : double.infinity,
       decoration: new BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5.0)),
         boxShadow: <BoxShadow>[
@@ -30,16 +39,12 @@ class ButtonKYP extends StatelessWidget {
           highlightColor: Colors.transparent,
           splashColor: Color(0xFFf7418c),
           //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 42.0),
-            child: Text(
-              this.text,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25.0,
-                  fontFamily: "WorkSansBold"),
-            ),
+          child: Text(
+            this.text,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 25.0,
+                fontFamily: "WorkSansBold"),
           ),
           onPressed: process),
     );
