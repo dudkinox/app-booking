@@ -474,6 +474,8 @@ class _SignUpPageState extends State<SignUpPage> {
                             height: 15,
                           ),
                           ButtonKYP(
+                            height: 55,
+                            width: 350,
                             text: "SIGN UP",
                             process: () async {
                               await Accountservices.signUp(

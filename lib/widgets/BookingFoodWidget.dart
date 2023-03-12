@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/common/button.dart';
-import 'package:flutter_app/widgets/PopularFoodsWidget.dart';
 
 import '../animation/ScaleRoute.dart';
 import '../themes/constant.dart';
-import 'BottomNavBarWidget.dart';
 import 'MenuWidget.dart';
 
 class BookingFoodWidget extends StatefulWidget {
@@ -49,6 +46,17 @@ class _BookingFoodWidgetState extends State<BookingFoodWidget> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text(
+                        "Name : ",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 32, 32, 32),
+                          fontFamily: defaultFontFamily,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 7,
+                      ),
                       Text(
                         "Phone : ",
                         style: TextStyle(
@@ -164,7 +172,7 @@ class _BookingFoodWidgetState extends State<BookingFoodWidget> {
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 32, 32, 32),
                                       fontFamily: defaultFontFamily,
-                                      fontSize: 16,
+                                      fontSize: 14,
                                     ),
                                   ),
                                   SizedBox(
@@ -175,7 +183,7 @@ class _BookingFoodWidgetState extends State<BookingFoodWidget> {
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 32, 32, 32),
                                       fontFamily: defaultFontFamily,
-                                      fontSize: 16,
+                                      fontSize: 14,
                                     ),
                                   ),
                                   SizedBox(
@@ -186,11 +194,8 @@ class _BookingFoodWidgetState extends State<BookingFoodWidget> {
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 32, 32, 32),
                                       fontFamily: defaultFontFamily,
-                                      fontSize: 16,
+                                      fontSize: 14,
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 7,
                                   ),
                                 ],
                               ),

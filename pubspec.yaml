@@ -53,12 +53,8 @@ flutter:
     - assets/images/menus/ic_account.png
     - assets/images/menus/logo.png
     - assets/images/menus/kyp.png
-    - assets/images/Table/2.png
-    - assets/images/Table/4.png
-    - assets/images/Table/6.png
-    - assets/images/Table/not2.png
-    - assets/images/Table/not4.png
-    - assets/images/Table/not6.png
+    - assets/images/Table/untable.png
+    - assets/images/Table/table.png
     - assets/images/menus/pho.png
     - assets/images/menus/ic_cart.png
     - assets/images/menus/ic_home.png

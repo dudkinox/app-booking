@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/CaloryCount.dart';
-import 'package:flutter_app/pages/FoodDetailsPage.dart';
 import 'package:flutter_app/pages/SignUpPage.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../common/button.dart';
 import '../services/account_services.dart';
@@ -30,20 +27,6 @@ class _SignInPageState extends State<SignInPage> {
         color: Colors.white70,
         child: Column(
           children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: InkWell(
-                child: Container(
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Icon(Icons.close),
-                  ),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
             Flexible(
               flex: 8,
               child: Column(
@@ -143,36 +126,14 @@ class _SignInPageState extends State<SignInPage> {
                     height: 15,
                   ),
                   ButtonKYP(
+                    height: 55,
+                    width: 350,
                     text: "SIGN IN",
                     process: () {
                       Accountservices.signIn(username.text, password.text)
                           .then((check) => {
                                 if (check)
                                   {
-                                    // showDialog(
-                                    //   context: context,
-                                    //   builder: (BuildContext context) {
-                                    //     return AlertDialog(
-                                    //       title: Text('Sign Ined'),
-                                    //       content:
-                                    //           Text('Dialog content goes here.'),
-                                    //       actions: [
-                                    //         TextButton(
-                                    //           child: Text('Cancel'),
-                                    //           onPressed: () {
-                                    //             Navigator.of(context).pop();
-                                    //           },
-                                    //         ),
-                                    //         TextButton(
-                                    //           child: Text('OK'),
-                                    //           onPressed: () {
-                                    //             // do something
-                                    //           },
-                                    //         ),
-                                    //       ],
-                                    //     );
-                                    //   },
-                                    // )
                                     showDialog(
                                       context: context,
                                       builder: (BuildContext context) {
@@ -195,6 +156,8 @@ class _SignInPageState extends State<SignInPage> {
                                               ),
                                               actions: [
                                                 ButtonKYP(
+                                                  height: 40,
+                                                  width: 150,
                                                   text: 'Book Table',
                                                   process: () async {
                                                     Navigator.push(
@@ -207,6 +170,8 @@ class _SignInPageState extends State<SignInPage> {
                                                   height: 7,
                                                 ),
                                                 ButtonKYP(
+                                                  height: 40,
+                                                  width: 150,
                                                   text: 'Count Calory',
                                                   process: () async {
                                                     Navigator.push(

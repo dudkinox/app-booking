@@ -35,7 +35,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
               children: <Widget>[
                 BookTableTiles(
                     name: "Number 1",
-                    imageUrl: "2",
+                    imageUrl: "table",
                     func: () {
                       setState(() {
                         nameTable = "Number 1";
@@ -43,7 +43,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                     }),
                 BookTableTiles(
                   name: "Number 2",
-                  imageUrl: "2",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 2";
@@ -52,7 +52,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 3",
-                  imageUrl: "not2",
+                  imageUrl: "untable",
                   func: () {
                     setState(() {
                       nameTable = "Number 3";
@@ -61,7 +61,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 4",
-                  imageUrl: "2",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 4";
@@ -78,7 +78,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
               children: <Widget>[
                 BookTableTiles(
                   name: "Number 5",
-                  imageUrl: "4",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 5";
@@ -87,7 +87,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 6",
-                  imageUrl: "not4",
+                  imageUrl: "untable",
                   func: () {
                     setState(() {
                       nameTable = "Number 6";
@@ -96,7 +96,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 7",
-                  imageUrl: "4",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 7";
@@ -105,7 +105,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 8",
-                  imageUrl: "4",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 8";
@@ -122,7 +122,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
               children: <Widget>[
                 BookTableTiles(
                   name: "Number 9",
-                  imageUrl: "not6",
+                  imageUrl: "untable",
                   func: () {
                     setState(() {
                       nameTable = "Number 9";
@@ -131,7 +131,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 10",
-                  imageUrl: "6",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 10";
@@ -140,7 +140,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 11",
-                  imageUrl: "6",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 11";
@@ -149,7 +149,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                 ),
                 BookTableTiles(
                   name: "Number 12",
-                  imageUrl: "6",
+                  imageUrl: "table",
                   func: () {
                     setState(() {
                       nameTable = "Number 12";
@@ -167,7 +167,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     Image.asset(
-                      "assets/images/Table/6.png",
+                      "assets/images/Table/table.png",
                       width: 20,
                       height: 20,
                     ),
@@ -177,7 +177,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                     Text(
                       'Available',
                       style: TextStyle(
-                        color: Color(0xFF6e6e71),
+                        color: Color.fromARGB(255, 45, 44, 44),
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                       ),
@@ -194,7 +194,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Image.asset(
-                      "assets/images/Table/not6.png",
+                      "assets/images/Table/untable.png",
                       width: 20,
                       height: 20,
                     ),
@@ -204,7 +204,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                     Text(
                       'Unavailable',
                       style: TextStyle(
-                        color: Color(0xFF6e6e71),
+                        color: Color.fromARGB(255, 45, 44, 44),
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                       ),
@@ -226,7 +226,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                         Text(
                           "Table Booking : ${nameTable}",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 56, 55, 55),
+                            color: Color.fromARGB(255, 45, 44, 44),
                             fontFamily: defaultFontFamily,
                             fontSize: 16,
                           ),
@@ -265,7 +265,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                                     color: Color(0xFF666666),
                                     size: defaultIconSize,
                                   ),
-                                  fillColor: Color.fromARGB(255, 249, 251, 255),
+                                  fillColor: Color(0xFFF2F3F5),
                                   hintStyle: TextStyle(
                                       color: Color.fromARGB(255, 56, 55, 55),
                                       fontFamily: defaultFontFamily,
@@ -293,7 +293,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                                 }
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: Color(0xFFF2F3F5),
                                 child: Icon(
                                   Icons.add,
                                   color: Color.fromARGB(255, 56, 55, 55),
@@ -322,7 +322,7 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                                 }
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: Color(0xFFF2F3F5),
                                 child: Icon(
                                   Icons.remove,
                                   color: Color.fromARGB(255, 56, 55, 55),
@@ -409,10 +409,10 @@ class _BookTableWidgetState extends State<BookTableWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            "Table Number : ${nameTable}",
+                                            "Table Booking : ${nameTable}",
                                           ),
                                           Text(
-                                            "Person Number : ${amount.text} People",
+                                            "Customer Amounts : ${amount.text} People",
                                           ),
                                           Text(
                                             "Time : ${timeValue.text}",
