@@ -25,15 +25,15 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.near_me),
-          label: 'Near By',
+          icon: Icon(Icons.table_bar),
+          label: 'Booking',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.card_giftcard),
-          label: 'Cart',
+          icon: Icon(Icons.calculate_rounded),
+          label: 'Calory',
         ),
         BottomNavigationBarItem(
-          icon: Icon(FontAwesomeIcons.user),
+          icon: Icon(Icons.person),
           label: 'Account',
         ),
       ],

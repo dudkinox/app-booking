@@ -17,8 +17,8 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
           elevation: 0,
           leading: IconButton(
             icon: Icon(
-              Icons.arrow_back_ios,
-              color: Color(0xFF3a3737),
+              Icons.arrow_back,
+              color: Colors.black,
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
@@ -34,7 +34,11 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
           ),
           brightness: Brightness.light,
           actions: <Widget>[
-            CartIconWithBadge(),
+            Icon(
+              Icons.abc,
+              color: Colors.transparent,
+              size: 50,
+            )
           ],
         ),
         body: SingleChildScrollView(
