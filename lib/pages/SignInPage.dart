@@ -157,7 +157,7 @@ class _SignInPageState extends State<SignInPage> {
                                               actions: [
                                                 ButtonKYP(
                                                   height: 40,
-                                                  width: 150,
+                                                  width: 200,
                                                   text: 'Book Table',
                                                   process: () async {
                                                     Navigator.push(
@@ -171,7 +171,7 @@ class _SignInPageState extends State<SignInPage> {
                                                 ),
                                                 ButtonKYP(
                                                   height: 40,
-                                                  width: 150,
+                                                  width: 200,
                                                   text: 'Count Calory',
                                                   process: () async {
                                                     Navigator.push(

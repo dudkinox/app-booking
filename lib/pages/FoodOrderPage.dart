@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter_app/pages/BookTable.dart';
+
+import '../animation/ScaleRoute.dart';
+import '../common/button.dart';
+import '../themes/constant.dart';
+import '../widgets/BookTableWidget.dart';
+import 'CaloryCount.dart';
 
 class FoodOrderPage extends StatefulWidget {
   @override
@@ -24,7 +30,7 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
           ),
           title: Center(
             child: Text(
-              "Item Carts",
+              "Your Food Cart",
               style: TextStyle(
                   color: Color(0xFF3a3737),
                   fontWeight: FontWeight.w600,
@@ -47,37 +53,21 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  padding: EdgeInsets.only(left: 5),
-                  child: Text(
-                    "Your Food Cart",
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xFF3a3a3b),
-                        fontWeight: FontWeight.w600),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
                 CartItem(
-                    productName: "Grilled Salmon",
-                    productPrice: "\$96.00",
+                    productName: "Menu: Pho",
+                    productPrice: "Price 299",
                     productImage: "ic_popular_food_1",
+                    productCalory: "Calory: 500",
                     productCartQuantity: "2"),
                 SizedBox(
                   height: 10,
                 ),
                 CartItem(
-                    productName: "Meat vegetable",
-                    productPrice: "\$65.08",
+                    productName: "Menu: Xoi",
+                    productPrice: "Price: 299",
                     productImage: "ic_popular_food_4",
+                    productCalory: "Calory: 500",
                     productCartQuantity: "5"),
-                SizedBox(
-                  height: 10,
-                ),
-                PromoCodeWidget(),
                 SizedBox(
                   height: 10,
                 ),
@@ -85,77 +75,44 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  padding: EdgeInsets.only(left: 5),
-                  child: Text(
-                    "Payment Method",
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xFF3a3a3b),
-                        fontWeight: FontWeight.w600),
-                    textAlign: TextAlign.left,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Icon(
+                      Icons.notification_important_outlined,
+                      size: defaultIconSize,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Each meal should not exceed 700 kcal.",
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF3a3a3b),
+                          fontWeight: FontWeight.w400),
+                      textAlign: TextAlign.left,
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                PaymentMethodWidget(),
+                ButtonKYP(
+                  height: 50,
+                  width: 370,
+                  text: "Confirm Order",
+                  process: () async {
+                    Navigator.push(context, ScaleRoute(page: CaloryCount()));
+                  },
+                ),
               ],
             ),
           ),
         ));
-  }
-}
-
-class PaymentMethodWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      width: double.infinity,
-      height: 60,
-      decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
-          color: Color(0xFFfae3e2).withOpacity(0.1),
-          spreadRadius: 1,
-          blurRadius: 1,
-          offset: Offset(0, 1),
-        ),
-      ]),
-      child: Card(
-        color: Colors.white,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(
-            Radius.circular(5.0),
-          ),
-        ),
-        child: Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.only(left: 10, right: 30, top: 10, bottom: 10),
-          child: Row(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.center,
-                child: Image.asset(
-                  "assets/images/menus/ic_credit_card.png",
-                  width: 50,
-                  height: 50,
-                ),
-              ),
-              Text(
-                "Credit/Debit Card",
-                style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xFF3a3a3b),
-                    fontWeight: FontWeight.w400),
-                textAlign: TextAlign.left,
-              )
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }
 
@@ -165,7 +122,6 @@ class TotalCalculationWidget extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       width: double.infinity,
-      height: 150,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
           color: Color(0xFFfae3e2).withOpacity(0.1),
@@ -194,17 +150,89 @@ class TotalCalculationWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "Grilled Salmon",
+                    "Food Price Total",
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
+                        color: Color(0xFF3a3a3b),
+                        fontWeight: FontWeight.w600),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    "1,196 ฿",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF3a3a3b),
+                        fontWeight: FontWeight.w600),
+                    textAlign: TextAlign.left,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Deposit 70%",
+                    style: TextStyle(
+                        fontSize: 16,
                         color: Color(0xFF3a3a3b),
                         fontWeight: FontWeight.w400),
                     textAlign: TextAlign.left,
                   ),
                   Text(
-                    "\$192",
+                    "837 ฿",
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
+                        color: Color(0xFF3a3a3b),
+                        fontWeight: FontWeight.w400),
+                    textAlign: TextAlign.left,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Calories Total",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF3a3a3b),
+                        fontWeight: FontWeight.w400),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    "2000 kcal",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF3a3a3b),
+                        fontWeight: FontWeight.w400),
+                    textAlign: TextAlign.left,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Average Calory for a person",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF3a3a3b),
+                        fontWeight: FontWeight.w400),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    "667 kcal",
+                    style: TextStyle(
+                        fontSize: 16,
                         color: Color(0xFF3a3a3b),
                         fontWeight: FontWeight.w400),
                     textAlign: TextAlign.left,
@@ -213,93 +241,9 @@ class TotalCalculationWidget extends StatelessWidget {
               ),
               SizedBox(
                 height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Meat vegetable",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0xFF3a3a3b),
-                        fontWeight: FontWeight.w400),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    "\$102",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0xFF3a3a3b),
-                        fontWeight: FontWeight.w400),
-                    textAlign: TextAlign.left,
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Total",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0xFF3a3a3b),
-                        fontWeight: FontWeight.w600),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    "\$292",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0xFF3a3a3b),
-                        fontWeight: FontWeight.w600),
-                    textAlign: TextAlign.left,
-                  )
-                ],
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class PromoCodeWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        padding: EdgeInsets.only(left: 3, right: 3),
-        decoration: BoxDecoration(boxShadow: [
-          BoxShadow(
-            color: Color(0xFFfae3e2).withOpacity(0.1),
-            spreadRadius: 1,
-            blurRadius: 1,
-            offset: Offset(0, 1),
-          ),
-        ]),
-        child: TextFormField(
-          decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFFe6e1e1), width: 1.0),
-              ),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFFe6e1e1), width: 1.0),
-                  borderRadius: BorderRadius.circular(7)),
-              fillColor: Colors.white,
-              hintText: 'Add Your Promo Code',
-              filled: true,
-              suffixIcon: IconButton(
-                  icon: Icon(
-                    Icons.local_offer,
-                    color: Color(0xFFfd2c2c),
-                  ),
-                  onPressed: () {
-                    debugPrint('222');
-                  })),
         ),
       ),
     );
@@ -310,6 +254,7 @@ class CartItem extends StatelessWidget {
   String productName;
   String productPrice;
   String productImage;
+  String productCalory;
   String productCartQuantity;
 
   CartItem({
@@ -317,6 +262,7 @@ class CartItem extends StatelessWidget {
     @required this.productName,
     @required this.productPrice,
     @required this.productImage,
+    @required this.productCalory,
     @required this.productCartQuantity,
   }) : super(key: key);
 
@@ -324,7 +270,6 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 130,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
           color: Color(0xFFfae3e2).withOpacity(0.3),
@@ -375,7 +320,7 @@ class CartItem extends StatelessWidget {
                               child: Text(
                                 "$productName",
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     color: Color(0xFF3a3a3b),
                                     fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.left,
@@ -388,7 +333,20 @@ class CartItem extends StatelessWidget {
                               child: Text(
                                 "$productPrice",
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 16,
+                                    color: Color(0xFF3a3a3b),
+                                    fontWeight: FontWeight.w400),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              child: Text(
+                                "$productCalory",
+                                style: TextStyle(
+                                    fontSize: 16,
                                     color: Color(0xFF3a3a3b),
                                     fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.left,

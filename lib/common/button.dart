@@ -10,7 +10,7 @@ class ButtonKYP extends StatelessWidget {
     this.text,
     this.process,
     this.height,
-    this.width,
+    this.width, Null Function() Pressed,
   }) : super(key: key);
 
   @override

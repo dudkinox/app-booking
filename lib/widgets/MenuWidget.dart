@@ -3,7 +3,6 @@ import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/FoodOrderPage.dart';
 
 import '../themes/constant.dart';
-import 'BottomNavBarWidget.dart';
 
 class MenuWidget extends StatefulWidget {
   @override
