@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/BookTable.dart';
+import 'package:flutter_app/pages/HomePage.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Roboto', hintColor: Color(0xFFd0cece)),
       // home: CaloryCount(),
-      home: BookTable(),
+      home: HomePage(),
     ));

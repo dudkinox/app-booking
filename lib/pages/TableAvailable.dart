@@ -24,15 +24,12 @@ class _TableAvailableState extends State<TableAvailable> {
     return SingleChildScrollView(
       child: Column(
         children: [
+          TableAvailableTitle(),
           Container(
             height: 100,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                TableAvailableTitle(),
-                SizedBox(
-                  height: 10,
-                ),
                 BookTableTiles(
                     name: "Number 1",
                     imageUrl: "table",

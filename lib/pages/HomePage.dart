@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/SignInPage.dart';
-import 'package:flutter_app/widgets/BestFoodWidget.dart';
 import 'package:flutter_app/widgets/BottomNavBarWidget.dart';
 
 import '../widgets/PopularFoodsWidget.dart';
-import 'BookTable.dart';
 import 'TableAvailable.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,7 +19,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xFFFAFAFA),
         elevation: 0,
         title: Text(
-          "Welcome To Korn-Yapa Vietnamese Food!",
+          "Welcome To Korn-Yapa!",
           style: TextStyle(
               color: Color(0xFF3a3737),
               fontSize: 16,
@@ -31,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           IconButton(
               icon: Icon(
-                Icons.notifications_none,
+                Icons.login,
                 color: Color(0xFF3a3737),
               ),
               onPressed: () {
@@ -44,7 +42,6 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             PopularFoodsWidget(),
             TableAvailable(),
-            BestFoodWidget(),
           ],
         ),
       ),
