@@ -19,7 +19,7 @@ class _BookingFoodWidgetState extends State<BookingFoodWidget> {
       appBar: AppBar(
         backgroundColor: Color(0xFFFAFAFA),
         elevation: 0,
-        leading: BackButton(color: Colors.black),
+        leading: BackButton(color: Color(0xFF3a3737)),
         title: Text(
           "Detail Table Booking",
           style: TextStyle(

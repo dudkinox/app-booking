@@ -8,6 +8,7 @@ import '../services/account_services.dart';
 import '../themes/constant.dart';
 import 'BookTable.dart';
 import 'ForgotPassword.dart';
+import 'HomePage.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -140,49 +141,50 @@ class _SignInPageState extends State<SignInPage> {
                                         return StatefulBuilder(
                                           builder: (BuildContext context,
                                               StateSetter setState) {
-                                            return AlertDialog(
-                                              title: Text(
-                                                'Welcome to Korn-Yapa!',
-                                                style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              content: Text(
-                                                'What would you like to?',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                ),
-                                              ),
-                                              actions: [
-                                                ButtonKYP(
-                                                  height: 40,
-                                                  width: 200,
-                                                  text: 'Book Table',
-                                                  process: () async {
-                                                    Navigator.push(
-                                                        context,
-                                                        ScaleRoute(
-                                                            page: BookTable()));
-                                                  },
-                                                ),
-                                                SizedBox(
-                                                  height: 7,
-                                                ),
-                                                ButtonKYP(
-                                                  height: 40,
-                                                  width: 200,
-                                                  text: 'Count Calory',
-                                                  process: () async {
-                                                    Navigator.push(
-                                                        context,
-                                                        ScaleRoute(
-                                                            page:
-                                                                CaloryCount()));
-                                                  },
-                                                ),
-                                              ],
-                                            );
+                                            return HomePage();
+                                            // AlertDialog(
+                                            //   title: Text(
+                                            //     'Welcome to Korn-Yapa!',
+                                            //     style: TextStyle(
+                                            //       fontSize: 20,
+                                            //       fontWeight: FontWeight.bold,
+                                            //     ),
+                                            //   ),
+                                            //   content: Text(
+                                            //     'What would you like to?',
+                                            //     style: TextStyle(
+                                            //       fontSize: 16,
+                                            //     ),
+                                            //   ),
+                                            //   actions: [
+                                            //     ButtonKYP(
+                                            //       height: 40,
+                                            //       width: 200,
+                                            //       text: 'Book Table',
+                                            //       process: () async {
+                                            //         Navigator.push(
+                                            //             context,
+                                            //             ScaleRoute(
+                                            //                 page: BookTable()));
+                                            //       },
+                                            //     ),
+                                            //     SizedBox(
+                                            //       height: 7,
+                                            //     ),
+                                            //     ButtonKYP(
+                                            //       height: 40,
+                                            //       width: 200,
+                                            //       text: 'Count Calory',
+                                            //       process: () async {
+                                            //         Navigator.push(
+                                            //             context,
+                                            //             ScaleRoute(
+                                            //                 page:
+                                            //                     CaloryCount()));
+                                            //       },
+                                            //     ),
+                                            //   ],
+                                            // );
                                           },
                                         );
                                       },

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/animation/RotationRoute.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/FoodDetailsPage.dart';
 
@@ -265,7 +264,7 @@ class PopularFoodItems extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       children: <Widget>[
         PopularFoodTiles(
-            name: "Fried Egg",
+            name: "Pho",
             imageUrl: "ic_popular_food_1",
             rating: '4.9',
             numberOfRating: '200',
@@ -293,7 +292,7 @@ class PopularFoodItems extends StatelessWidget {
             price: "11.10",
             slug: ""),
         PopularFoodTiles(
-            name: "Red meat,Salad",
+            name: "Goi Cuon",
             imageUrl: "ic_popular_food_2",
             rating: "4.6",
             numberOfRating: "150",
@@ -321,7 +320,7 @@ class PopularFoodItems extends StatelessWidget {
             price: '15.06',
             slug: "fried_egg"),
         PopularFoodTiles(
-            name: "Red meat,Salad",
+            name: "Goi Cuon",
             imageUrl: "ic_popular_food_2",
             rating: "4.6",
             numberOfRating: "150",

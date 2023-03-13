@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/BookTable.dart';
 
 import '../animation/ScaleRoute.dart';
 import '../common/button.dart';
 import '../themes/constant.dart';
-import '../widgets/BookTableWidget.dart';
 import 'CaloryCount.dart';
 
 class FoodOrderPage extends StatefulWidget {

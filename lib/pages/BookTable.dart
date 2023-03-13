@@ -17,6 +17,7 @@ class _BookTableState extends State<BookTable> {
       appBar: AppBar(
         backgroundColor: Color(0xFFFAFAFA),
         elevation: 0,
+        leading: BackButton(color: Color(0xFF3a3737)),
         title: Text(
           "Which would you like to sit?",
           style: TextStyle(
