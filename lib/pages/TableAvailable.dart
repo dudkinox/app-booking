@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../animation/ScaleRoute.dart';
+import '../widgets/MenuWidget.dart';
+
 class TableAvailable extends StatefulWidget {
   @override
   _TableAvailableState createState() => _TableAvailableState();
@@ -25,48 +28,52 @@ class _TableAvailableState extends State<TableAvailable> {
       child: Column(
         children: [
           TableAvailableTitle(),
-          Container(
-            height: 100,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                BookTableTiles(
-                    name: "Number 1",
-                    imageUrl: "table",
-                    func: () {
-                      setState(() {
-                        nameTable = "Number 1";
-                      });
-                    }),
-                BookTableTiles(
-                  name: "Number 2",
-                  imageUrl: "table",
-                  func: () {
-                    setState(() {
-                      nameTable = "Number 2";
-                    });
-                  },
+          Column(
+            children: [
+              Container(
+                height: 100,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    BookTableTiles(
+                        name: "Number 1",
+                        imageUrl: "table",
+                        func: () {
+                          setState(() {
+                            nameTable = "Number 1";
+                          });
+                        }),
+                    BookTableTiles(
+                      name: "Number 2",
+                      imageUrl: "table",
+                      func: () {
+                        setState(() {
+                          nameTable = "Number 2";
+                        });
+                      },
+                    ),
+                    BookTableTiles(
+                      name: "Number 3",
+                      imageUrl: "untable",
+                      func: () {
+                        setState(() {
+                          nameTable = "Number 3";
+                        });
+                      },
+                    ),
+                    BookTableTiles(
+                      name: "Number 4",
+                      imageUrl: "table",
+                      func: () {
+                        setState(() {
+                          nameTable = "Number 4";
+                        });
+                      },
+                    ),
+                  ],
                 ),
-                BookTableTiles(
-                  name: "Number 3",
-                  imageUrl: "untable",
-                  func: () {
-                    setState(() {
-                      nameTable = "Number 3";
-                    });
-                  },
-                ),
-                BookTableTiles(
-                  name: "Number 4",
-                  imageUrl: "table",
-                  func: () {
-                    setState(() {
-                      nameTable = "Number 4";
-                    });
-                  },
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           Container(
             height: 100,
