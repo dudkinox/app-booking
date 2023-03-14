@@ -9,7 +9,7 @@ const Register = async (req, res, next) => {
     console.log(data);
     await firestore.collection("account").doc().set(data);
 
-    return res.status(201).json(`Success!`);
+    return res.status(201).json("Success!");
   } catch (err) {
     console.error(err);
     return res.status(400).json("bad request");
