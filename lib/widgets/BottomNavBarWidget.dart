@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BottomNavBarWidget extends StatefulWidget {
+  BottomNavBarWidget({
+    Key key,
+    @required this.selectIndex,
+  }) : super(key: key);
+
+  int selectIndex;
   @override
   _BottomNavBarWidgetState createState() => _BottomNavBarWidgetState();
 }
@@ -8,11 +14,9 @@ class BottomNavBarWidget extends StatefulWidget {
 class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
     void _onItemTapped(int index) {
       setState(() {
-        _selectedIndex = index;
-//        navigateToScreens(index);
+        widget.selectIndex = index;
       });
     }
 
@@ -36,7 +40,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
           label: 'Account',
         ),
       ],
-      currentIndex: _selectedIndex,
+      currentIndex: widget.selectIndex,
       selectedItemColor: Color(0xFFfd5352),
       onTap: _onItemTapped,
     );
