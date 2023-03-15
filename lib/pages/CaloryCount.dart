@@ -5,7 +5,6 @@ import 'package:flutter_app/widgets/BestFoodWidget.dart';
 import 'package:flutter_app/widgets/BottomNavBarWidget.dart';
 import 'package:flutter_app/widgets/PopularFoodsWidget.dart';
 import 'package:flutter_app/widgets/SearchWidget.dart';
-import 'package:flutter_app/widgets/BookTableWidget.dart';
 
 class CaloryCount extends StatefulWidget {
   @override
