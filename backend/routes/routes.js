@@ -1,6 +1,7 @@
 const express = require("express");
 const { RegisterService: Register } = require("../controllers/loginController");
 const { LoginService: Login } = require("../controllers/loginController");
+const { TableService: BookTable } = require("../controllers/tableController");
 const {
   InsertMenuService: insertMenu,
   GetMenuService: getMenu,
@@ -16,6 +17,7 @@ router.post("/register", Register);
 router.post("/login", Login);
 router.post("/menus", insertMenu);
 router.get("/menus", getMenu);
+router.get("/table", BookTable);
 
 module.exports = {
   routes: router,
