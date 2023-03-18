@@ -88,7 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               ),
                               filled: true,
                               prefixIcon: Icon(
-                                Icons.person_3_rounded,
+                                Icons.person_rounded,
                                 color: Color(0xFF666666),
                                 size: defaultIconSize,
                               ),

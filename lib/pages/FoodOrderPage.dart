@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/FoodOrderConfirm.dart';
 
 import '../animation/ScaleRoute.dart';
 import '../common/button.dart';
 import '../themes/constant.dart';
+import 'CaloryCount.dart';
 
 class FoodOrderPage extends StatefulWidget {
   @override
@@ -104,8 +104,7 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                   width: 370,
                   text: "Confirm Order",
                   process: () async {
-                    Navigator.push(
-                        context, ScaleRoute(page: FoodOrderConfirm()));
+                    Navigator.push(context, ScaleRoute(page: CaloryCount()));
                   },
                 ),
               ],
