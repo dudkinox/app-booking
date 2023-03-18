@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/FoodDetailsPage.dart';
 
+import '../models/response/menu_response.dart';
+import '../services/menu_services.dart';
+
 class PopularFoodsWidget extends StatefulWidget {
   @override
   _PopularFoodsWidgetState createState() => _PopularFoodsWidgetState();
@@ -28,20 +31,16 @@ class _PopularFoodsWidgetState extends State<PopularFoodsWidget> {
 class PopularFoodTiles extends StatelessWidget {
   String name;
   String imageUrl;
-  String rating;
-  String numberOfRating;
+  String calories;
   String price;
-  String slug;
 
-  PopularFoodTiles(
-      {Key key,
-      @required this.name,
-      @required this.imageUrl,
-      @required this.rating,
-      @required this.numberOfRating,
-      @required this.price,
-      @required this.slug})
-      : super(key: key);
+  PopularFoodTiles({
+    Key key,
+    @required this.name,
+    @required this.calories,
+    @required this.imageUrl,
+    @required this.price,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +52,6 @@ class PopularFoodTiles extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(left: 10, right: 5, top: 5, bottom: 5),
-            decoration: BoxDecoration(boxShadow: [
-              /* BoxShadow(
-                color: Color(0xFFfae3e2),
-                blurRadius: 15.0,
-                offset: Offset(0, 0.75),
-              ),*/
-            ]),
             child: Card(
                 color: Colors.white,
                 elevation: 0,
@@ -105,10 +97,8 @@ class PopularFoodTiles extends StatelessWidget {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Center(
-                                child: Image.asset(
-                              'assets/images/popular_foods/' +
-                                  imageUrl +
-                                  ".png",
+                                child: Image.network(
+                              imageUrl,
                               width: 130,
                               height: 140,
                             )),
@@ -118,14 +108,16 @@ class PopularFoodTiles extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            padding: EdgeInsets.only(left: 5, top: 5),
-                            child: Text(name,
-                                style: TextStyle(
-                                    color: Color(0xFF6e6e71),
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500)),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.bottomLeft,
+                              padding: EdgeInsets.only(left: 5, top: 5),
+                              child: Text(name,
+                                  style: TextStyle(
+                                      color: Color(0xFF6e6e71),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500)),
+                            ),
                           ),
                           Container(
                             alignment: Alignment.topRight,
@@ -161,48 +153,7 @@ class PopularFoodTiles extends StatelessWidget {
                               Container(
                                 alignment: Alignment.topLeft,
                                 padding: EdgeInsets.only(left: 5, top: 5),
-                                child: Text(rating,
-                                    style: TextStyle(
-                                        color: Color(0xFF6e6e71),
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.w400)),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(top: 3, left: 5),
-                                child: Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.star,
-                                      size: 10,
-                                      color: Color(0xFFfb3132),
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      size: 10,
-                                      color: Color(0xFFfb3132),
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      size: 10,
-                                      color: Color(0xFFfb3132),
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      size: 10,
-                                      color: Color(0xFFfb3132),
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      size: 10,
-                                      color: Color(0xFF9b9b9c),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                alignment: Alignment.topLeft,
-                                padding: EdgeInsets.only(left: 5, top: 5),
-                                child: Text("($numberOfRating)",
+                                child: Text("Calories " + calories + " kcal",
                                     style: TextStyle(
                                         color: Color(0xFF6e6e71),
                                         fontSize: 10,
@@ -213,9 +164,9 @@ class PopularFoodTiles extends StatelessWidget {
                           Container(
                             alignment: Alignment.bottomLeft,
                             padding: EdgeInsets.only(left: 5, top: 5, right: 5),
-                            child: Text('\$' + price,
+                            child: Text('฿' + price,
                                 style: TextStyle(
-                                    color: Color(0xFF6e6e71),
+                                    color: Color.fromARGB(255, 218, 61, 13),
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600)),
                           )
@@ -237,20 +188,14 @@ class PopularFoodTitle extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
-            "Popluar Foods",
+            "All Menu",
             style: TextStyle(
                 fontSize: 20,
                 color: Color(0xFF3a3a3b),
                 fontWeight: FontWeight.w300),
           ),
-          Text(
-            "See all",
-            style: TextStyle(
-                fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w100),
-          )
         ],
       ),
     );
@@ -260,73 +205,26 @@ class PopularFoodTitle extends StatelessWidget {
 class PopularFoodItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      children: <Widget>[
-        PopularFoodTiles(
-            name: "Pho",
-            imageUrl: "ic_popular_food_1",
-            rating: '4.9',
-            numberOfRating: '200',
-            price: '15.06',
-            slug: "fried_egg"),
-        PopularFoodTiles(
-            name: "Mixed Vegetable",
-            imageUrl: "ic_popular_food_3",
-            rating: "4.9",
-            numberOfRating: "100",
-            price: "17.03",
-            slug: ""),
-        PopularFoodTiles(
-            name: "Salad With Chicken",
-            imageUrl: "ic_popular_food_4",
-            rating: "4.0",
-            numberOfRating: "50",
-            price: "11.00",
-            slug: ""),
-        PopularFoodTiles(
-            name: "Mixed Salad",
-            imageUrl: "ic_popular_food_5",
-            rating: "4.00",
-            numberOfRating: "100",
-            price: "11.10",
-            slug: ""),
-        PopularFoodTiles(
-            name: "Goi Cuon",
-            imageUrl: "ic_popular_food_2",
-            rating: "4.6",
-            numberOfRating: "150",
-            price: "12.00",
-            slug: ""),
-        PopularFoodTiles(
-            name: "Mixed Salad",
-            imageUrl: "ic_popular_food_5",
-            rating: "4.00",
-            numberOfRating: "100",
-            price: "11.10",
-            slug: ""),
-        PopularFoodTiles(
-            name: "Potato,Meat fry",
-            imageUrl: "ic_popular_food_6",
-            rating: "4.2",
-            numberOfRating: "70",
-            price: "23.0",
-            slug: ""),
-        PopularFoodTiles(
-            name: "Fried Egg",
-            imageUrl: "ic_popular_food_1",
-            rating: '4.9',
-            numberOfRating: '200',
-            price: '15.06',
-            slug: "fried_egg"),
-        PopularFoodTiles(
-            name: "Goi Cuon",
-            imageUrl: "ic_popular_food_2",
-            rating: "4.6",
-            numberOfRating: "150",
-            price: "12.00",
-            slug: ""),
-      ],
-    );
+    return FutureBuilder<List<MenusResponse>>(
+        future: MenusService.getMenu(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            List<MenusResponse> carouselCard = snapshot.data;
+
+            return ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                for (var i = 0; i < carouselCard.length; i++)
+                  PopularFoodTiles(
+                      name: carouselCard[i].name,
+                      imageUrl: carouselCard[i].image,
+                      calories: carouselCard[i].calories.toString(),
+                      price: carouselCard[i].price.toString()),
+              ],
+            );
+          } else {
+            return Container();
+          }
+        });
   }
 }
