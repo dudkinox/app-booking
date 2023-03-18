@@ -37,7 +37,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 300,
-                  childAspectRatio: 3 / 4,
+                  childAspectRatio: 3 / 3.7,
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
                 ),

@@ -40,7 +40,7 @@ class PopularFoodTiles extends StatelessWidget {
       @required this.rating,
       @required this.numberOfRating,
       @required this.price,
-      this.slug})
+      @required this.slug})
       : super(key: key);
 
   @override
@@ -213,7 +213,7 @@ class PopularFoodTiles extends StatelessWidget {
                           Container(
                             alignment: Alignment.bottomLeft,
                             padding: EdgeInsets.only(left: 5, top: 5, right: 5),
-                            child: Text(price + " ฿",
+                            child: Text('\$' + price,
                                 style: TextStyle(
                                     color: Color(0xFF6e6e71),
                                     fontSize: 12,
@@ -268,55 +268,64 @@ class PopularFoodItems extends StatelessWidget {
             imageUrl: "ic_popular_food_1",
             rating: '4.9',
             numberOfRating: '200',
-            price: '15.06 '),
+            price: '15.06',
+            slug: "fried_egg"),
         PopularFoodTiles(
             name: "Mixed Vegetable",
             imageUrl: "ic_popular_food_3",
             rating: "4.9",
             numberOfRating: "100",
-            price: "17.03"),
+            price: "17.03",
+            slug: ""),
         PopularFoodTiles(
             name: "Salad With Chicken",
             imageUrl: "ic_popular_food_4",
             rating: "4.0",
             numberOfRating: "50",
-            price: "11.00"),
+            price: "11.00",
+            slug: ""),
         PopularFoodTiles(
             name: "Mixed Salad",
             imageUrl: "ic_popular_food_5",
             rating: "4.00",
             numberOfRating: "100",
-            price: "11.10"),
+            price: "11.10",
+            slug: ""),
         PopularFoodTiles(
             name: "Goi Cuon",
             imageUrl: "ic_popular_food_2",
             rating: "4.6",
             numberOfRating: "150",
-            price: "12.00"),
+            price: "12.00",
+            slug: ""),
         PopularFoodTiles(
             name: "Mixed Salad",
             imageUrl: "ic_popular_food_5",
             rating: "4.00",
             numberOfRating: "100",
-            price: "11.10"),
+            price: "11.10",
+            slug: ""),
         PopularFoodTiles(
             name: "Potato,Meat fry",
             imageUrl: "ic_popular_food_6",
             rating: "4.2",
             numberOfRating: "70",
-            price: "23.0"),
+            price: "23.0",
+            slug: ""),
         PopularFoodTiles(
             name: "Fried Egg",
             imageUrl: "ic_popular_food_1",
             rating: '4.9',
             numberOfRating: '200',
-            price: '15.06'),
+            price: '15.06',
+            slug: "fried_egg"),
         PopularFoodTiles(
             name: "Goi Cuon",
             imageUrl: "ic_popular_food_2",
             rating: "4.6",
             numberOfRating: "150",
-            price: "12.00"),
+            price: "12.00",
+            slug: ""),
       ],
     );
   }

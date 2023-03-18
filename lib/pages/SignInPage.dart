@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
-import 'package:flutter_app/pages/CaloryCount.dart';
 import 'package:flutter_app/pages/SignUpPage.dart';
 
 import '../common/button.dart';
 import '../services/account_services.dart';
 import '../themes/constant.dart';
-import 'BookTable.dart';
 import 'ForgotPassword.dart';
 import 'HomePage.dart';
 
