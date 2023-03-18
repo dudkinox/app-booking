@@ -3,7 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_app/pages/BookTable.dart';
-import 'package:flutter_app/pages/CaloryCount.dart';
+import 'package:flutter_app/pages/CaloriesCount.dart';
 import 'package:flutter_app/pages/HomePage.dart';
 import 'package:flutter_app/pages/SignInPage.dart';
 import 'package:flutter_app/widgets/BottomNavBarWidget.dart';
@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   final screen = [
     HomePage(),
     BookTable(),
-    CaloryCount(),
+    CaloriesCount(),
     Container(),
   ];
 
