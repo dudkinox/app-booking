@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../animation/ScaleRoute.dart';
-import '../widgets/MenuWidget.dart';
+import 'BookTable.dart';
 
 class TableAvailable extends StatefulWidget {
   @override
@@ -39,9 +39,9 @@ class _TableAvailableState extends State<TableAvailable> {
                         name: "Number 1",
                         imageUrl: "table",
                         func: () {
-                          setState(() {
-                            nameTable = "Number 1";
-                          });
+                          nameTable = "Number 1";
+                          Navigator.push(
+                              context, ScaleRoute(page: BookTable(nameTable)));
                         }),
                     BookTableTiles(
                       name: "Number 2",
@@ -248,11 +248,6 @@ class TableAvailableTitle extends StatelessWidget {
                 color: Color(0xFF3a3a3b),
                 fontWeight: FontWeight.w300),
           ),
-          Text(
-            "See all",
-            style: TextStyle(
-                fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w100),
-          )
         ],
       ),
     );

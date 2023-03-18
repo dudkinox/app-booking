@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_app/pages/BookTable.dart';
 import 'package:flutter_app/pages/CaloriesCount.dart';
 import 'package:flutter_app/pages/HomePage.dart';
-import 'package:flutter_app/pages/SignInPage.dart';
-import 'package:flutter_app/widgets/BottomNavBarWidget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key key}) : super(key: key);
@@ -20,7 +15,6 @@ class _MainScreenState extends State<MainScreen> {
 
   final screen = [
     HomePage(),
-    BookTable(),
     CaloriesCount(),
     Container(),
   ];
@@ -41,10 +35,6 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.table_bar),
-            label: 'Booking',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calculate_rounded),

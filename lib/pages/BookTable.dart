@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/SignInPage.dart';
-import 'package:flutter_app/widgets/BottomNavBarWidget.dart';
 import 'package:flutter_app/widgets/BookTableWidget.dart';
 
 class BookTable extends StatefulWidget {
+  final String tableNumber;
+  BookTable(this.tableNumber);
   @override
-  _BookTableState createState() => _BookTableState();
+  _BookTableState createState() => _BookTableState(tableNumber);
 }
 
 class _BookTableState extends State<BookTable> {
+  String tableNumber;
+  _BookTableState(this.tableNumber);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +23,7 @@ class _BookTableState extends State<BookTable> {
         elevation: 0,
         title: Center(
           child: Text(
-            "Which would you like to sit?",
+            "Table number : " + tableNumber,
             style: TextStyle(
                 color: Color(0xFF3a3737),
                 fontSize: 16,
@@ -30,7 +34,7 @@ class _BookTableState extends State<BookTable> {
         actions: <Widget>[
           IconButton(
               icon: Icon(
-                Icons.login,
+                Icons.close,
                 color: Color(0xFF3a3737),
               ),
               onPressed: () {

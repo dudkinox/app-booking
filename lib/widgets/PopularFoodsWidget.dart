@@ -190,7 +190,7 @@ class PopularFoodTitle extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Text(
-            "All Menu",
+            "All Menus",
             style: TextStyle(
                 fontSize: 20,
                 color: Color(0xFF3a3a3b),
