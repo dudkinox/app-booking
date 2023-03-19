@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/animation/ScaleRoute.dart';
 import 'package:flutter_app/pages/SignInPage.dart';
+import 'package:flutter_app/widgets/ListDataDropdown.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -24,10 +25,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController weight = new TextEditingController();
   TextEditingController height = new TextEditingController();
   TextEditingController phonenumber = new TextEditingController();
-  List<String> gender = [
-    "Male",
-    "Female",
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -285,7 +283,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                           ),
                                         ),
                                         isExpanded: true,
-                                        items: gender.map(
+                                        items: genderList.map(
                                           (val) {
                                             return DropdownMenuItem(
                                               value: val,
@@ -297,7 +295,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                         onChanged: (String value) {
                                           setState(() {
                                             sex = value;
-                                            print(sex);
+                                            // print(sex);
                                           });
                                         },
                                       ),

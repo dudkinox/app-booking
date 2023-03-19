@@ -6,15 +6,28 @@ import 'package:intl/intl.dart';
 import '../themes/constant.dart';
 
 class BookTableWidget extends StatefulWidget {
+  final String tableNumber;
+  BookTableWidget(this.tableNumber);
   @override
-  _BookTableWidgetState createState() => _BookTableWidgetState();
+  _BookTableWidgetState createState() => _BookTableWidgetState(tableNumber);
 }
 
 class _BookTableWidgetState extends State<BookTableWidget> {
+  String tableNumber;
+  _BookTableWidgetState(this.tableNumber);
   String nameTable = "";
   TextEditingController amount = new TextEditingController();
   TextEditingController timeValue = new TextEditingController();
   TimeOfDay pickedTime = TimeOfDay.now();
+
+  @override
+  void initState() {
+    if (tableNumber != null) {
+      nameTable = tableNumber;
+      setState(() {});
+    }
+    super.initState();
+  }
 
   String formatTimeOfDay(TimeOfDay tod) {
     final now = new DateTime.now();

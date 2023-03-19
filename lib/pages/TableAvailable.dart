@@ -41,7 +41,11 @@ class _TableAvailableState extends State<TableAvailable> {
                         func: () {
                           nameTable = "Number 1";
                           Navigator.push(
-                              context, ScaleRoute(page: BookTable(nameTable)));
+                            context,
+                            ScaleRoute(
+                              page: BookTable(nameTable),
+                            ),
+                          );
                         }),
                     BookTableTiles(
                       name: "Number 2",

@@ -38,11 +38,12 @@ class _BookTableState extends State<BookTable> {
                 color: Color(0xFF3a3737),
               ),
               onPressed: () {
-                Navigator.push(context, ScaleRoute(page: SignInPage()));
+                Navigator.pop(context);
+                // Navigator.push(context, ScaleRoute(page: SignInPage()));
               })
         ],
       ),
-      body: BookTableWidget(),
+      body: BookTableWidget(tableNumber),
       // bottomNavigationBar: BottomNavBarWidget(),
     );
   }

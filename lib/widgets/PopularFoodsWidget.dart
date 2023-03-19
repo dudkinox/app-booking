@@ -208,22 +208,20 @@ class PopularFoodItems extends StatelessWidget {
     return FutureBuilder<List<MenusResponse>>(
         future: MenusService.getMenu(),
         builder: (context, snapshot) {
-          print(snapshot.data);
           if (snapshot.connectionState == ConnectionState.done) {
             List<MenusResponse> carouselCard = snapshot.data;
-            print(carouselCard);
-            return Container();
-            // ListView(
-            //   scrollDirection: Axis.horizontal,
-            //   children: <Widget>[
-            //     for (var i = 0; i < carouselCard.length; i++)
-            //       PopularFoodTiles(
-            //           name: carouselCard[i].name,
-            //           imageUrl: carouselCard[i].image,
-            //           calories: carouselCard[i].calories.toString(),
-            //           price: carouselCard[i].price.toString()),
-            //   ],
-            // );
+
+            return ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                for (var i = 0; i < carouselCard.length; i++)
+                  PopularFoodTiles(
+                      name: carouselCard[i].name,
+                      imageUrl: carouselCard[i].image,
+                      calories: carouselCard[i].calories.toString(),
+                      price: carouselCard[i].price.toString()),
+              ],
+            );
           } else {
             return Container();
           }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/AccountCustomer.dart';
 import 'package:flutter_app/pages/BookTable.dart';
 import 'package:flutter_app/pages/CaloriesCount.dart';
 import 'package:flutter_app/pages/HomePage.dart';
@@ -13,10 +14,10 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
 
-  final screen = [
+  var screen = [
     HomePage(),
     CaloriesCount(),
-    Container(),
+    AccountCustomer(),
   ];
 
   void _onItemTapped(int index) {
