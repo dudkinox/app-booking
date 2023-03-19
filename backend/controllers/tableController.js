@@ -4,7 +4,7 @@ const firebase = require("../db");
 const firestore = firebase.firestore();
 const TableResponse = require("../models/table");
 
-const insertMenu = async (req, res, next) => {
+const BookTable = async (req, res, next) => {
   try {
     const data = req.body;
     await firestore.collection("table").doc().set(data);
