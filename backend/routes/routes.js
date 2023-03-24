@@ -3,6 +3,9 @@ const { RegisterService: Register } = require("../controllers/loginController");
 const { LoginService: Login } = require("../controllers/loginController");
 const { TableService: BookTable } = require("../controllers/tableController");
 const {
+  BookingService: getBooking,
+} = require("../controllers/bookingController");
+const {
   InsertMenuService: insertMenu,
   GetMenuService: getMenu,
 } = require("../controllers/menuController");
@@ -18,6 +21,7 @@ router.post("/login", Login);
 router.post("/menus", insertMenu);
 router.get("/menus", getMenu);
 router.get("/table", BookTable);
+router.get("/booking", getBooking);
 
 module.exports = {
   routes: router,
